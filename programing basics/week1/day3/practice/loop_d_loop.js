@@ -12,8 +12,8 @@ because its a repative action
  a couter in the loop and a milage counter also */
 
  var distence = 0
- if (distence <= 6) {
-     for (let i = 0; i < 3; i++) {
+ if (distence <= 6 && distence == 2) {
+     for ( i = 0; i < 3; i++) {
         distence = distence + 2
         console.log("here is your candy")
         // console.log(distence)

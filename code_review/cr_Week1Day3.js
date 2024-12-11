@@ -99,4 +99,11 @@ countless4(arr)
 
 console.log(count)
 
-//9. 
+//9. find string length
+//discription return the length of a string
+
+function stringLength(str) {
+    return str.length
+}
+
+console.log(stringLength("hello"))

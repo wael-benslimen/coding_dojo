@@ -1,0 +1,22 @@
+.search{
+    width: 100px;
+    border: 1px solid #b7dcdc;
+    border-radius: 15px;
+    color: #b7dcdc;
+}
+.add{
+    background-color:#00d0b0 ;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+.account{
+    background-color: #2b78e4;
+    color: white;
+    padding: 5px 10px;
+    width: 130px;
+    border: 1px solid black;
+    box-shadow: 3px 3px black;
+}

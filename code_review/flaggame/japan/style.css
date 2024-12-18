@@ -1,0 +1,23 @@
+.white{
+    height: 200px;
+    width: 300px;
+    background-color: white;
+    border: solid;
+}
+.red{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: red;
+    margin-top: 16%;
+    margin-left: 32%;
+
+}
+.container{
+    width: 50%;
+    margin: 0 auto;
+    
+}
+body{
+    background-color: black;
+}

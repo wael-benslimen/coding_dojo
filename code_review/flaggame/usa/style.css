@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.red{
+    height: 25px;
+    background-color: red;
+}
+.white{
+    height: 25px;
+}
+.container{
+    width: 50%;
+    margin: 0 auto;
+}
+.star{
+    background-color: blue;
+    width: 19%;
+}
+p{
+    color: white;
+}

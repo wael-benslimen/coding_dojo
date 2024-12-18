@@ -1,0 +1,25 @@
+.blue{
+    background-color: #000c86;
+    height: 40px;
+}
+.white{
+        height: 40px;
+        
+}
+.red{
+    background-color: #db2416;
+    height: 100px;
+}
+.container{
+    width: 30%;
+    margin: 0 auto;
+}
+img{
+    width: 70px;
+    height: 78px;
+    margin-left: 20%;
+    margin-top: 1.5%;
+    background-color: white;
+    border-radius: 50%;
+    padding: 1%;
+}

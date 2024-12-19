@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    background-color: aqua;
+    width: 900px;
+    margin: 0 auto;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.oct{
+    width: 200px;
+}
+.first{
+    background-color:#5dc6f8 ;
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+}
+.second{
+    background-color:#b793a8 ;
+    display: flex;
+    justify-content: space-around;
+    padding: 2%;
+}
+.third{
+    background-color: #fcfcff;
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+}

@@ -1,0 +1,52 @@
+/* CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fixed width container class that will "auto-center" itself */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+.search {
+    width: 100px;
+    border: 1px solid #b7dcdc;
+    border-radius: 15px;
+    color: #b7dcdc;
+}
+.row {
+    display: flex;
+    height: 90px;
+    margin: 1%;
+    gap: 1%;
+}
+
+.col {
+    background-color: gray;
+    flex: 1;
+}
+
+.col-2 {
+    background-color: gray;
+    flex: 2;
+}
+
+.col-3 {
+    background-color: gray;
+    flex: 3;
+}
+.nav {
+    background-color: #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    flex: 1;
+    justify-content: space-between;
+}

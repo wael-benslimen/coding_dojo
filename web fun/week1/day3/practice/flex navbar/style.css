@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.nav{
+    background-color:#333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+}
+.nav-title{
+    color: white;
+    flex: 3;
+}
+.nav-links{
+    display: flex;
+    list-style: none;
+    flex: 1;
+    justify-content: space-between;
+}
+a{
+    color: gray;
+    text-decoration: none;
+}
+.active{
+    color: white;
+    font-weight: bold;
+}
+.btn{
+    background-color:#17a2b8;
+    color: white;
+    padding: 0 5px;
+    box-shadow: 2px 2px black;
+}

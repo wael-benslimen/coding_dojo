@@ -5,23 +5,33 @@
 }
 /* nav bar */
 .nav {
-    background-color: #333333;
+    background-color: #000000;
+
+}
+.mid{
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 5px 10px;
+    width: 45%;
+    margin: 0 auto;
+}
+.title{
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    flex: 1;
+    gap: 2%;
 }
 
 .nav-title {
     color: white;
-    flex: 3;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    flex: 1;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .nav-link {
@@ -86,13 +96,18 @@
 }
 /* connections*/
 .con{
-
+    border: 1px solid #d1d1d1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 .con-head{
     background-color: #333333;
     color: white;
     padding: 5%;
-    gap: 1%;
+    display: flex;
+    align-items: center;
+    gap: 2%;
 
 }
 .num{
@@ -101,10 +116,13 @@
     color: black;
     padding: 1%;
     text-align: center;
+    width: 20px;
 }
 .con-main{
-    border: 1px solid #d1d1d1;
-    padding: 1%;
+    
+    padding: 1% 9% 6% 3%;
+    display: flex;
+    justify-content: space-between;
 }
 .users{
     display: flex;
@@ -126,21 +144,27 @@
     gap: 7px;
 }
 .tx{
-    background-color:#d0d0d0;
+    background-color:#999999;
     border-radius: 50%;
     color: white;
     text-align: center;
     border: none;
     padding: 10%;
-    
+    margin-left: 5px;
+    width: 50px;
+}
+.con-bot{
+    border: 1px solid #d1d1d1;
+    padding: 5%;
 }
 /* main container */
 .container{
-    width: 1000px;
+    width: 50%;
     margin: 0 auto;
     padding: 3%;
     display: flex;
     gap: 15px;
+    justify-content: center;
 }
 .left{
     display: flex;

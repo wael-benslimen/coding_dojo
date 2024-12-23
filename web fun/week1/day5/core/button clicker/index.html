@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button clicker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- nav bar -->
+        <div class="nav">
+            <h1>Dojonary</h1>
+            <input type="text" name="search" value="Search" class="search">
+            <button class="btn" onclick="login(this)">login</button>
+        </div>
+        <div class="main">
+        <!-- right -->
+        <div class="left">
+            <!-- word -->
+            <div class="word">
+                <div class="left-in">
+                    <h1>ninja</h1>
+                    <p>noun</p>
+                    <p>plural : ninjas</p>
+                    <button class="green-btn" onclick="msg()">13 likes</button>
+                </div>
+                <p class="para-in">A practitioner skilled in the <br>
+                    <a href="#">japanese</a> art of <a href="#">ninjutsu</a>
+                </p>
+            </div>
+            <div class="word">
+                <div class="left-in">
+                    <h1>ninja</h1>
+                    <p>noun</p>
+                    <p>plural : ninjas</p>
+                    <button class="green-btn" onclick="msg()" >37 likes</button>
+                </div>
+                <p class="para-in">A <a href="#">programmer</a> who breaks <br> down problems with <a href="#">zen</a>-like <br>
+                    focus</p>
+            </div>
+        </div>
+        <!-- left -->
+        <div class="right">
+            <p>Dojonary is <br>
+                defined by <span>you</span></p>
+            <button class="dojo" onclick="sup(this)">add Definition</button>
+        </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -7,17 +7,57 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="likes">
-        <div class="top">
-            <h3>Some User</h3>
-            <div class="like">
-                <p id="more">3</p>
-                <p>like(s)</p>
-            </div>
-            <button class="btn" onclick="add1('#more')">Like</button>
+    <div class="main">
+        <div class="nav">
+            <h1>network</h1>
         </div>
-        <p>this is some filler text, it can say any thing we like</p>
+        <h1 class="center">your feed</h1>
     </div>
+    <div class="container">
+
+        <div class="left">
+            <img src="./assets/user-circle.png" alt="user" class="img">
+            <a href="#">Add an Avatar</a>
+            <h2>james Doe</h2>
+        </div>
+        <div class="right">
+            <div class="likes">
+                <div class="top">
+                    <h3>Neil M</h3>
+                    <div class="like">
+                        <p id="more">9</p>
+                        <p>like(s)</p>
+                    </div>
+                    <button class="btn" onclick="add1('#more')">Like</button>
+                </div>
+                <p>i jaust set up this new discord bot let me know what you think <a href="#">link</a></p>
+            </div>
+            <div class="likes">
+                <div class="top">
+                    <h3>Nichole K</h3>
+                    <div class="like">
+                        <p id="more1">12</p>
+                        <p>like(s)</p>
+                    </div>
+                    <button class="btn" onclick="add1('#more1')">Like</button>
+                </div>
+                <p>just fineshed my <a href="#">next comic</a> check it out</p>
+            </div>
+            <div class="likes">
+                <div class="top">
+                    <h3>Jim R</h3>
+                    <div class="like">
+                        <p id="more2">9</p>
+                        <p>like(s)</p>
+                    </div>
+                    <button class="btn" onclick="add1('#more2')">Like</button>
+                </div>
+                <p>I can t stop listning to the <a href="#">new album</a> who else is liking it ?</p>
+            </div>
+        </div>
+    </div>
+   
+
     <script src="./script.js"></script>
 </body>
 </html>

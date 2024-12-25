@@ -7,22 +7,33 @@
 .main{
     width: 50%;
     margin: 0 auto;
+
+}
+.container {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 /* nav bar */
 .navbar{
     background-color:#9fc5f8 ;
+
+}
+.center{
     display: flex;
     color: white;
     align-items: center;
-    gap: 50%;
+    justify-content: space-between;
     padding: 1% 10%;
     flex-wrap: wrap;
+    margin: 0 auto;
 }
 .citys{
     display: flex;
     list-style: none;
     width: 34%;
-    justify-content: space-evenly;
+    gap: 15%;
 }
 .navbar ul li a{
     color: white;

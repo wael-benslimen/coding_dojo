@@ -11,9 +11,9 @@
         <div class="navbar">
             <h1>DojoWeather</h1>
             <ul class="citys">
-                <li><a href="#">Burbank</a></li>
-                <li><a href="#">Chicago</a></li>
-                <li><a href="#">Dallas</a></li>
+                <li><a href="#" onclick="msg()">Burbank</a></li>
+                <li><a href="#" onclick="msg()">Chicago</a></li>
+                <li><a href="#" onclick="msg()">Dallas</a></li>
             </ul>
         </div>
         <div class="main">
@@ -21,10 +21,9 @@
                 <h2>San Jose</h2>
                 <div class="side">
                     <p>show tempereture</p>
-                    <select name="" id="">
-                        <option value="">°F</option>
-                        <option value="">°C</option>
-                        <option value="">°k</option>
+                    <select name="" id="" onchange="tempchange(this)">
+                        <option value="°F">°F</option>
+                        <option value="°C">°C</option>
                     </select>
                 </div>
             </div>
@@ -33,25 +32,25 @@
                     <h3>Today</h3>
                     <img src="./assets/some_rain.png" alt="" class="img">
                     <p>some rain</p>
-                    <span class="sidebyside"><p>75°</p><p>65°</p></span>
+                    <span class="sidebyside"><p id="hight1">75°</p><p id="low1">65°</p></span>
                 </div>
                 <div class="days">
                     <h3>Tomorrow</h3>
                     <img src="./assets/some_sun.png" alt="" class="img">
                     <p>some sun</p>
-                    <span class="sidebyside"><p>75°</p><p>65°</p></span>
+                    <span class="sidebyside"><p id="hight2">75°</p><p id="low2">65°</p></span>
                 </div>
                 <div class="days">
                     <h3>Friday</h3>
                     <img src="./assets/some_clouds.png" alt="" class="img">
                     <p>some clouds</p>
-                    <span class="sidebyside"><p>69°</p><p>61°</p></span>
+                    <span class="sidebyside"><p id="hight3">69°</p><p id="low3">61°</p></span>
                 </div>
                 <div class="days">
                     <h3>Saturday</h3>
                     <img src="./assets/some_sun.png" alt="" class="img">
                     <p>some sun</p>
-                    <span class="sidebyside"><p>78°</p><p>70°</p></span>
+                    <span class="sidebyside"><p id="hight4">78°</p><p id="low4">70°</p></span>
                 </div>
             </div>
         </div>
@@ -61,8 +60,9 @@
                 <h3>Stop! cookie time</h3>
                 <p>we use cookies (sadly not edible ones) to personalize content and ads, to provide social media lectures and to analyse our trafic <a href="#" class="blue">read more</a></p>
             </div>
-            <button class="btn">I accept</button>
+            <button class="btn" onclick="del()">I accept</button>
         </div>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>

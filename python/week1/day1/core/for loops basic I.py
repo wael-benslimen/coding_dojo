@@ -1,7 +1,7 @@
-for i in range (150):
+for i in range (151):
     print(i)
 
-for i in range (0, 1000, 5):
+for i in range (5, 1001, 5):
     print(i)
 
 for i in range (1, 100):
@@ -9,9 +9,12 @@ for i in range (1, 100):
         print("coding dojo")
     elif(i % 5 == 0):
         print("coding")
+    else:
+        print(i)
 x = 0
 for i in range (500000):
-    x += i
+    if i % 2 != 0:
+        x += i
 print(x)
 
 for i in range(2018, 0, -4):

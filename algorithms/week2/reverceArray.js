@@ -4,7 +4,7 @@
 2.the code will run trought half of the length of the array
 3.the code will store the first value we want to switch to a temporary variable
 4.the code will reverse the last value with the first
-5.the code will put the value stored in the tempory into the place of the last value
+5.the code will put the value stored in the tempory var into the place of the last value
 6.we will repeat this process until we reach the middle of the array
 7.the reversed array will be returned and displayed
 /

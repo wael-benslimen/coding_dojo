@@ -1,5 +1,8 @@
 {
   "python.testing.pytestArgs": ["code_review"],
   "python.testing.unittestEnabled": false,
-  "python.testing.pytestEnabled": true
+  "python.testing.pytestEnabled": true,
+  "terminal.integrated.automationProfile.windows": {
+    
+  }
 }

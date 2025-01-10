@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>great number game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-body">
+            <div class="card-header">
+                <h1 class="text-center">Welcome to greate number Game</h1>
+                <p class="text-center">I am thinking of a number between 1 and 100</p>
+                <p class="text-center">take a guess</p>
+                {% if session["test"] == "low" %}
+                <div style="background-color: red;">
+                    <h1>too low</h1>
+                </div>
+                {% elif session["test"] == "high" %}
+                <div style="background-color: red;">
+                    <h1>too high</h1>
+                </div>
+                {% elif session["test"] == "eaqual" %}
+                <div style="background-color: green;">
+                    <h1>correct</h1>
+                </div>
+                {% endif %}
+            </div>
+            <form action="/guess" method="post" class="card-body ">
+                <input type="text" name="guess" class="form-control">
+                <input type="submit" class="btn btn-success">
+                <button class="btn btn-danger"><a href="/clear">clear</a></button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

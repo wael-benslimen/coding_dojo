@@ -87,7 +87,7 @@ console.log(paransValid(str5));
 let str6 = "(ty)(py))"
 console.log(paransValid(str6));
 
-console.log("***************************************");
+console.log("*******************second method********************");
 
 
 console.log(paransValid2(str1));

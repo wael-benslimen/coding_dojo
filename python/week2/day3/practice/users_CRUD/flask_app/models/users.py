@@ -20,7 +20,9 @@ class User:
             users.append( cls(user) )
         return users
     
-    
+    @classmethod
+    def get_one(cls, id):
+        
     
     @classmethod
     def create(cls, data):

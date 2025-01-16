@@ -20,7 +20,6 @@
             <th>actions</th>
         </thead>
         <tbody>
-            {% for user in all_users %}
             <tr>
                 <td>
                     {{user.id}}
@@ -36,19 +35,14 @@
                 </td>
                 <td>
                     <div class="d-flex gap-2">
-                        <button class="btn btn-primary"><a href="/show/{{user.id}}"
-                                class="text-decoration-none text-white">show</a></button>
-                        <button class="btn btn-warning"><a href="/edit/{{user.id}}"
-                                class="text-decoration-none text-white">edit</a></button>
-                        <button class="btn btn-danger"><a href="/delete/{{user.id}}"
-                                class="text-decoration-none text-white">delete</a></button>
+                        <button class="btn btn-primary"><a href="/"
+                                class="text-decoration-none text-white">home</a></button>
+
                     </div>
                 </td>
             </tr>
-            {% endfor %}
         </tbody>
     </table>
-    <button class="btn btn-primary"><a href="/form" class="text-decoration-none text-white">add a new User</a></button>
 </body>
 
 </html>

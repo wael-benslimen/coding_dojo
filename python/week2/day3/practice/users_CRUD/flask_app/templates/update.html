@@ -12,19 +12,20 @@
 <body>
     <div class="card">
         <h1 class="card-header">update user</h1>
-        <form action="/update" method="post"></form>
-        <label for="first_name" class="form-label">First name</label>
-        <input type="text" name="first_name" class="form-control">
-        <label for="first_name" class="form-label">Last name</label>
-        <input type="text" name="last_name" class="form-control">
-        <label for="first_name" class="form-label">Email</label>
-        <input type="text" name="email" class="form-control">
-        <input type="hidden" value="{{id}}">
-        <div class="d-flex alignce">
-            <input type="submit" class="btn btn-success  d-inline" value="update">
-            <button class="btn btn-primary  d-inline"><a href="/"
-                    class="text-decoration-none text-white">Home</a></button>
-        </div>
+        <form action="/update" method="post">
+            <label for="first_name" class="form-label">First name</label>
+            <input type="text" name="first_name" class="form-control" placeholder="{{one_user.first_name}}"">
+        <label for=" first_name" class="form-label">Last name</label>
+            <input type="text" name="last_name" class="form-control" placeholder="{{one_user.last_name}}">
+            <label for="first_name" class="form-label">Email</label>
+            <input type="text" name="email" class="form-control" placeholder="{{one_user.email}}">
+            <input type="hidden" name="id" value="{{one_user.id}}">
+            <p>{{one_user.id}}</p>
+            <div class="d-flex alignce">
+                <input type="submit" class="btn btn-success" value="update">
+                <button class="btn btn-primary  d-inline"><a href="/"
+                        class="text-decoration-none text-white">Home</a></button>
+            </div>
 
         </form>
     </div>

@@ -27,11 +27,25 @@ def remove_item(id):
 
 @app.route('/edit/<int:id>')
 def view_edit(id):
-    return render_template('update.html', id = id)
+    data = {
+        'id': id
+    }
+    return render_template('update.html', one_user =  User.get_one(data))
 
 
 
-@app.route('/update')
-def update():
-    User.update(request.form)
+@app.route('/update', methods = ['POST'])
+def update_user():
+    form = request.form
+    print("*"*80)
+    print(form)
+    User.update_users(form)
     return redirect('/')
+
+
+@app.route('/show/<int:id>')
+def show_one(id):
+    data = {
+        'id': id
+    }
+    return render_template ('show_one.html',user =  User.get_one(data))

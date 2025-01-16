@@ -21,10 +21,12 @@ class User:
         return users
     
     @classmethod
-    def get_one(cls, id):
+    def get_one(cls, data):
         query = "select * from users where ID = %(id)s;"
-        result = connectToMySQL(db).query_db(query,{'ID': id})
-        return result
+        result = connectToMySQL(db).query_db(query,data)
+        print(result)
+        one_user = cls(result[0])
+        return one_user
         
     
     @classmethod
@@ -47,10 +49,7 @@ class User:
         
         
     @classmethod
-    def update(cls, id):
-        query = "update users set first_name = %(first_name)s, last_name = %(last_name)s, email = %(email)s where id = %(id)s;"
-        data = {
-            'id': id
-        }
+    def update_users(cls, data):
+        query = "update users set first_name = %(first_name)s, last_name = %(last_name)s, email = %(email)s where ID = %(id)s;"
         resault = connectToMySQL(db).query_db(query,data)
         return resault

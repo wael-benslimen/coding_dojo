@@ -18,3 +18,20 @@ def treat_info():
     resault = request.form
     User.create(resault)
     return redirect('/')
+
+
+@app.route('/delete/<int:id>')
+def remove_item(id):
+    User.delete(id)
+    return redirect('/')
+
+@app.route('/edit/<int:id>')
+def view_edit(id):
+    return render_template('update.html', id = id)
+
+
+
+@app.route('/update')
+def update():
+    User.update(request.form)
+    return redirect('/')

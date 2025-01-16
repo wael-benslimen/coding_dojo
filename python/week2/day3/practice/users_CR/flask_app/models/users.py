@@ -17,7 +17,7 @@ class User:
         result = connectToMySQL(db).query_db(query)
         users = []
         for user in result:
-            users.append( cls(user) )
+            users.append(cls(user))
         return users
     
     

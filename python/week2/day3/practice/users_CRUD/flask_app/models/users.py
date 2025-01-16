@@ -22,6 +22,9 @@ class User:
     
     @classmethod
     def get_one(cls, id):
+        query = "select * from users where ID = %(id)s;"
+        result = connectToMySQL(db).query_db(query,{'ID': id})
+        return result
         
     
     @classmethod
@@ -30,3 +33,24 @@ class User:
         result = connectToMySQL(db).query_db(query, data)
         return result
 
+
+
+    @classmethod
+    def delete(cls, id):
+        query = "delete from users where id = %(id)s;"
+        data = {
+            'id' : id
+        }
+        resault = connectToMySQL(db).query_db(query, data)
+        
+        
+        
+        
+    @classmethod
+    def update(cls, id):
+        query = "update users set first_name = %(first_name)s, last_name = %(last_name)s, email = %(email)s where id = %(id)s;"
+        data = {
+            'id': id
+        }
+        resault = connectToMySQL(db).query_db(query,data)
+        return resault

@@ -17,6 +17,7 @@
             <th>full name</th>
             <th>Email</th>
             <th>Created at</th>
+            <th>actions</th>
         </thead>
         <tbody>
             {% for user in all_users %}
@@ -32,6 +33,14 @@
                 </td>
                 <td>
                     {{user.created_at}}
+                </td>
+                <td>
+                    <div class="d-flex gap-2">
+                        <button>show</button>
+                        <button class="btn btn-warning"><a href="/edit/{{user.id}}">edit</a></button>
+                        <button class="btn btn-danger"><a href="/delete/{{user.id}}"
+                                class="text-decoration-none text-white">delete</a></button>
+                    </div>
                 </td>
             </tr>
             {% endfor %}

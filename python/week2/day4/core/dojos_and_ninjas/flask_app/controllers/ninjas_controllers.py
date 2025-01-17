@@ -27,3 +27,10 @@ def show_ninjas():
     all_ninjas = Ninja.get_all_by_dojo_id(session['id'])
     dojo = Dojo.get_one(session['id'])
     return render_template('ninjas.html', all_ninjas = all_ninjas, dojo_name = dojo[0]['name'])
+
+
+@app.route('/show_dojo_ninjas/<int:id>')
+def dojo_ninjas(id):
+    all_ninjas = Ninja.get_all_by_dojo_id(id)
+    dojo = Dojo.get_one(id)
+    return render_template('ninjas.html', all_ninjas = all_ninjas, dojo_name = dojo)

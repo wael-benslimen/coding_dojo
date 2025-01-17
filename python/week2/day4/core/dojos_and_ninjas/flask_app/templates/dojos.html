@@ -29,7 +29,8 @@
                     {% for item in all_dojos %}
                     <tr>
                         <td>
-                            {{item.name}}
+                            <a href="/show_dojo_ninjas/{{item.id}}"
+                                class="text-decoration-none text-white">{{item.name}}</a>
                         </td>
                     </tr>
                     {% endfor %}

@@ -26,3 +26,5 @@ class Ninja:
         query = 'select * from ninjas where dojos_ID = %(id)s'
         resault = connectToMySQL(db).query_db(query, dojo)
         return resault
+    
+    

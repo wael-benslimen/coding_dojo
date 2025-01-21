@@ -20,7 +20,7 @@ def registration_form():
         session['id'] = User.create(data)
     else:
         return redirect('/')
-    return('/resault')
+    return redirect('/recepies')
 
 
 @app.route('/login', methods = ["POST"])

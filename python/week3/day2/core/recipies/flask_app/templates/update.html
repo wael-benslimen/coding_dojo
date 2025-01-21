@@ -24,7 +24,6 @@
         {% endif %}
         {% endwith %}
         <form action="/update_recepie" method="post" class="card-body d-flex flex-column gap-2">
-            {{recepie}}
             <label for="name" class="form-label">name</label>
             <input type="text" name="name" class="form-control" value="{{recepie.name}}">
             <label for="discription">discription</label>

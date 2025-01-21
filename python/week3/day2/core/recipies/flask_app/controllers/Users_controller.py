@@ -2,7 +2,10 @@ from flask import render_template, redirect, request, session
 from flask_app.models.users import User
 from flask_app import app, bcrypt
 
-    
+
+
+
+
 @app.route('/')
 def login_register():
     return render_template('login_registration.html')
@@ -39,13 +42,4 @@ def login_form():
                 session['id'] = user['id']
         else:
             return redirect('/') 
-    return redirect('/resault')
-
-
-@app.route('/resault')
-def show_user():
-    print("*" *100)
-    print(session['id'])
-    user = User.get_one_id(session['id'])
-    return render_template('resault.html', user = user)
-    
+    return redirect('/')

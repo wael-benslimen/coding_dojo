@@ -42,4 +42,4 @@ def login_form():
                 session['id'] = user['id']
         else:
             return redirect('/') 
-    return redirect('/')
+    return redirect('/recepies')

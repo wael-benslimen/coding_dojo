@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recepies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body class="bg-primary-subtle">
+    <div class="container mt-4 card bg-dark text-white">
+        <h1 class="text-warning card-header">Welcome {{user.first_name}}</h1>
+        <div>
+            <p class="card-text d-inline">all posted recepies</p>
+            <div class="d-flex justify-content-end gap-2 mb-3">
+                <a href="/new_recepie" class="btn btn-primary col-1 ">create</a>
+                <a href="/logout" class="btn btn-primary col-1">logout</a>
+            </div>
+        </div>
+
+        <table class="card-body table table-dark table-bordered">
+            <thead>
+                <th>name</th>
+                <th>under 30 mins</th>
+                <th>Poster by</th>
+                <th>actions</th>
+            </thead>
+            <tbody>
+                {% for item in all_recepies %}
+                <tr>
+                    <td>{{item.name}}</td>
+                    <td>{{item.under_30}}</td>
+                    <td>{{item.first_name}}</td>
+                    <td>
+                        <ul class="d-flex nav justify-content-between">
+                            <li><a href="/recepies/{{item.id}}" class="btn btn-primary">view recepie</a></li>
+                            {% if item.user_id == user.id %}
+                            <li><a href="/edit/{{item.id}}" class="btn btn-warning">edit</a></li>
+                            <li><a href="/delete/{{item.id}}" class="btn btn-danger">delete</a></li>
+                            {% endif %}
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

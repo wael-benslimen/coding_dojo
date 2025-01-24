@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shows</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between">
+            <h1 class="text-warning">welcome to your NextFix, {{user.first_name}}</h1>
+            <div class="d-flex align-items-center gap-3">
+                <a href="/shows/new" class="btn btn-primary">+create</a>
+                <form action="/logout" method="post">
+                    <input type="submit" value="logout" class="btn btn-danger">
+                </form>
+            </div>
+        </div>
+        <div>
+            <h1>all TV Shows</h1>
+            <table class="table table-bordered">
+                <thead>
+                    <th>title</th>
+                    <th>network</th>
+                    <th>release date</th>
+                    <th>more</th>
+                </thead>
+                <tbody>
+                    {% for show in all_shows %}
+                    <tr>
+                        <td> {{show.title}} </td>
+                        <td> {{show.network}} </td>
+                        <td> {{show.release_date}} </td>
+                        <td>
+                            <ul class="nav d-flex justify-content-between">
+                                {% if show.user_id != session['id'] %}
+                                <li><a href="/shows/{{show.id}}" class="btn btn-primary">Details</a></li>
+                                {% endif %}
+                                {% if show.user_id == session['id'] %}
+                                <li>
+                                    <form action="/delete/{{show.id}}" method="post">
+                                        <input type="submit" value="delete" class="btn btn-danger">
+                                    </form>
+                                </li>
+                                <li><a href="/shows/edit/{{show.id}}" class="btn btn-warning">edit</a></li>
+                                {% endif %}
+                            </ul>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

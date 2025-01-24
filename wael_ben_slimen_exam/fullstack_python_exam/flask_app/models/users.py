@@ -31,7 +31,7 @@ class User:
     @classmethod
     def get_one_id(cls,id):
         query = 'select * from users where id = %(id)s'
-        result = connectToMySQL(DB).query_db(query,{'id' : id})
+        result = connectToMySQL(DB).query_db(query,id)
         return result[0]
     
     @staticmethod

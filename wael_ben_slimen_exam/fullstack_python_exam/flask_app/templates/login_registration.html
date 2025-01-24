@@ -10,13 +10,14 @@
 </head>
 
 <body>
+    <h1 class="text-primary text-center">NextFix</h1>
     <div class="container mt-5 d-flex justify-content-between">
         <div class="card bg-dark text-white col-5 d-flex gap-2">
             <h1 class="text-primary card-header">Register</h1>
             {% with messages = get_flashed_messages(category_filter = 'register') %}
             {% if messages %}
             {% for message in messages %}
-            <p class="text-danger fw-bold">{{message}}</p>
+            <p class="text-danger fw-bold card-body">{{message}}</p>
             {% endfor %}
             {% endif %}
             {% endwith %}
@@ -28,9 +29,9 @@
                 <label for="email" class="form-label">email</label>
                 <input type="text" name="email" class="form-control">
                 <label for="password" class="form-label">password</label>
-                <input type="text" name="password" class="form-control">
+                <input type="password" name="password" class="form-control">
                 <label for="password_conf" class="form-label">confirm password</label>
-                <input type="text" name="password_conf" class="form-control">
+                <input type="password" name="password_conf" class="form-control">
                 <input type="submit" value="register" class="btn btn-success mt-3">
             </form>
         </div>
@@ -39,7 +40,7 @@
             {% with messages = get_flashed_messages(category_filter = 'login') %}
             {% if messages %}
             {% for message in messages %}
-            <p class="text-danger fw-bold">{{message}}</p>
+            <p class="text-danger fw-bold card-body">{{message}}</p>
             {% endfor %}
             {% endif %}
             {% endwith %}
@@ -47,7 +48,7 @@
                 <label for="email" class="form-label">email</label>
                 <input type="text" name="email" class="form-control">
                 <label for="password" class="form-label">password</label>
-                <input type="text" name="password" class="form-control">
+                <input type="password" name="password" class="form-control">
                 <input type="submit" value="login" class="btn btn-warning mt-3">
             </form>
         </div>

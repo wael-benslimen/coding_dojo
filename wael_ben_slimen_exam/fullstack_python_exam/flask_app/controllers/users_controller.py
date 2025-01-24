@@ -10,14 +10,19 @@ def login_register():
 @app.route('/register', methods = ['POST'])
 def registration_form():
     if User.check_registration(request.form):
-        data = {
-            **request.form
-        }
-        data['password'] = bcrypt.generate_password_hash(request.form['password'])
-        session['id'] = User.create(data)
-    else:
+        if User.get_one_email(request.form) == False :
+            data = {
+                **request.form
+            }
+            data['password'] = bcrypt.generate_password_hash(request.form['password'])
+            session['id'] = User.create(data)
+        else:
+            flash('email already in system', 'register')
+            return redirect('/')
+        return redirect('/shows')
+    else: 
+        
         return redirect('/')
-    return redirect('/resault')
 
 
 @app.route('/login', methods = ["POST"])
@@ -35,25 +40,13 @@ def login_form():
             return redirect('/') 
         else:
             session['id'] = user['id']
-            return redirect('/resault')
+            return redirect('/shows')
     else:
         flash('password or email incorrect', 'login')
         return redirect('/') 
     
 
-
-@app.route('/resault')
-def show_user():
-    if 'id' in session:
-        user = User.get_one_id(session['id'])
-        return render_template('resault.html', user = user)
-    else:
-        return redirect('/')
-    
-    
-@app.route('/clear')
-def clear():
+@app.route('/logout', methods = ['POST'])
+def logout():
     session.clear()
     return redirect('/')
-
-    

@@ -28,7 +28,7 @@ const pokemonDivBy3 = pokemon.filter(p => p.id % 3 == 0)
 console.log(pokemonDivBy3);
 console.log('************************');
 
-const pokemonFire = pokemon.filter(p => p.types[0] == 'fire')
+const pokemonFire = pokemon.filter(p => p.types.find((item) => item === 'fire'))
 console.log(pokemonFire);
 console.log('************************');
 

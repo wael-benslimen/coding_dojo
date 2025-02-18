@@ -3,16 +3,10 @@ import axios from 'axios'
 function App() {
   const [pokemons, setPokemons] = useState([])
 
-  const fetchPokemons = () => {
-      axios.get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=200')
-        .then(response => {
-        console.log("this is the response after .json",response)
-          const firstpokemons = response.data.results.slice(0, 151)
-          console.log(firstpokemons);
-          
-        setPokemons(firstpokemons)
+  const fetchPokemons = async() => {
+        const lstofpokemons = await axios.get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=200')          
+        setPokemons(lstofpokemons.data.results.slice(0, 151))
         
-    })
   }
 
   useEffect(() => {

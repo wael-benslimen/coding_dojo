@@ -7,6 +7,7 @@ const Tabs = () => {
     { title: 'tab1', content: 'Tab 1 Content' },
     { title: 'tab2', content: 'Tab 2 Content' },
     { title: 'tab3', content: 'Tab 3 Content' }, 
+    { title: 'tab4', content: 'Tab 4 Content' },
   ];
 
   const handleTabChange = (e) => {

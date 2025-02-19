@@ -61,7 +61,20 @@ const DisplayData = ({ info, genre }) => {
                 <div className=' w-100'>
                     <h1 className=' text-4xl font-semibold'> {info.name} </h1>
                     <p><span className=' font-semibold'>model : </span>{info.model}</p>
-                    <p><span className=' font-semibold'>manifacturer: </span>{info.manifacturer}</p>
+                    <p><span className=' font-semibold'>manufacturer: </span>{info.manufacturer}</p>
+                    <p><span className=' font-semibold'>cost_in_credits: </span>{info.cost_in_credits}</p>
+                    <p><span className=' font-semibold'>cargo_capacity: </span>{info.cargo_capacity}</p>
+                </div>
+            </div>
+            )
+        }
+      if (genre == 'starships') {
+        return (
+            <div className='p-5 flex flex-col items-center mt-20 '>
+                <div className=' w-100'>
+                    <h1 className=' text-4xl font-semibold'> {info.name} </h1>
+                    <p><span className=' font-semibold'>model : </span>{info.model}</p>
+                    <p><span className=' font-semibold'>manufacturer: </span>{info.manufacturer}</p>
                     <p><span className=' font-semibold'>cost_in_credits: </span>{info.cost_in_credits}</p>
                     <p><span className=' font-semibold'>cargo_capacity: </span>{info.cargo_capacity}</p>
                 </div>

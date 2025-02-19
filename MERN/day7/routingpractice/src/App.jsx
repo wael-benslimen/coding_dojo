@@ -9,9 +9,8 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/:num/:color' element={<ViewOne />} />
+          <Route path='/:num' element={<ViewOne />} />
           <Route path='/:word/:tcolor/:bg' element={<TextColor />} />
-          <Route path='/:word' element = {<Text />} />
           
         </Routes>
       </Router>

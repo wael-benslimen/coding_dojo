@@ -16,7 +16,12 @@ const CreateBook = () => {
     console.log(title);
 
     try {
-      await axios.post("http://localhost:3000/books", formInput);
+      await axios.post("http://localhost:3000/books", {
+        title,
+        author,
+        pages,
+        isAvailable,
+      });
       navigate("/");
     } catch (error) {
       console.log(error);

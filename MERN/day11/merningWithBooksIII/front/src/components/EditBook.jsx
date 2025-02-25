@@ -12,26 +12,34 @@ const EditBook = () => {
   const [errors, setErrors] = useState({});
   const { id } = useParams();
   let navigate = useNavigate();
+
   const validations = () => {
+    const errors = {};
     let valid = true;
+
     if (formInput.title.length < 2 || formInput.title.length > 255) {
       errors.title =
-        "book title must be at least 2 characters long! and book title must be less than 255 characters long";
+        "Book title must be at least 2 characters long and less than 255 characters long!";
       valid = false;
     }
     if (formInput.author.length < 2 || formInput.author.length > 255) {
       errors.author =
-        "book author must be at least 2 characters long! and book author must be less than 255 characters long";
+        "Book author must be at least 2 characters long and less than 255 characters long!";
       valid = false;
     }
     if (formInput.pages < 1) {
-      errors.pages = "book pages must be at least 1";
+      errors.pages = "Book pages must be at least 1!";
       valid = false;
     }
+
+    setErrors(errors); 
     return valid;
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrors({});
+
     if (!validations()) {
       return;
     }
@@ -43,6 +51,7 @@ const EditBook = () => {
       console.error(error);
     }
   };
+
   const getOne = async () => {
     try {
       const oneobj = (await axios.get(`http://localhost:3000/books/${id}`))
@@ -52,66 +61,68 @@ const EditBook = () => {
       console.error(error);
     }
   };
+
   useEffect(() => {
     getOne();
   }, []);
+
   return (
     <div>
       <form className="max-w-sm mx-auto" onSubmit={handleSubmit}>
         <div className="mb-5">
           <label
             htmlFor="title"
-            className="block mb-2 text-sm font-medium text-gray-900 "
+            className="block mb-2 text-sm font-medium text-gray-900"
           >
             Your title
           </label>
           <input
             type="text"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
             value={formInput.title}
             onChange={(e) =>
               setFromInput({ ...formInput, title: e.target.value })
             }
           />
-          <p className="text-red-500"> {errors.title} </p>
+          {errors.title && <p className="text-red-500">{errors.title}</p>}
         </div>
         <div className="mb-5">
           <label
-            htmlFor="author name"
-            className="block mb-2 text-sm font-medium text-gray-900 "
+            htmlFor="author"
+            className="block mb-2 text-sm font-medium text-gray-900"
           >
             Your author name
           </label>
           <input
-            type="author name"
-            id="author name"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            type="text"
+            id="author"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
             value={formInput.author}
             onChange={(e) =>
               setFromInput({ ...formInput, author: e.target.value })
             }
           />
-          <p className="text-red-500">{errors.author}</p>
+          {errors.author && <p className="text-red-500">{errors.author}</p>}
         </div>
         <div className="mb-5">
           <label
-            htmlFor="author name"
-            className="block mb-2 text-sm font-medium text-gray-900 "
+            htmlFor="pages"
+            className="block mb-2 text-sm font-medium text-gray-900"
           >
-            page count
+            Page count
           </label>
           <input
             type="number"
-            id="author name"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            id="pages"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
             value={formInput.pages}
             onChange={(e) =>
               setFromInput({ ...formInput, pages: e.target.value })
             }
           />
-          <p className="text-red-500"> {errors.pages} </p>
+          {errors.pages && <p className="text-red-500">{errors.pages}</p>}
         </div>
-        <div className=" mb-5">
+        <div className="mb-5">
           <input
             type="checkbox"
             checked={formInput.isAvailable}
@@ -119,7 +130,7 @@ const EditBook = () => {
               setFromInput({ ...formInput, isAvailable: e.target.checked })
             }
           />
-          <label htmlFor="checkbox"> is the book availble</label>
+          <label htmlFor="checkbox"> Is the book available?</label>
         </div>
         <button
           type="submit"

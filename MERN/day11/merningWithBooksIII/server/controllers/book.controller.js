@@ -4,7 +4,7 @@ import Book from '../models/book.model.js'
 export const createBook = async (req, res) => {
     try {
         const newBook = new Book(req.body)
-        await newBook.save()
+        await newBook.save
         res.status(201).json({mesaage:'user is created succesfuly', newBook})
     } catch (error) {
         res.status(500).json(error)

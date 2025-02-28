@@ -39,6 +39,8 @@ export const updatePost = async (req, res) => {
       return res.status(404).json({ message: "post not availble" });
     }
     updatedPost.reviwes.push(req.body.reviwes);
+    console.log(updatePost);
+    
     updatedPost.save();
     res.status(201).json(updatedPost);
   } catch (error) {

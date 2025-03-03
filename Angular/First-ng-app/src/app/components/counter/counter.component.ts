@@ -40,3 +40,5 @@ export class CounterComponent {
     this.number.set(0);
   };
 }
+
+

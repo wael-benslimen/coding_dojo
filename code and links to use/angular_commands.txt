@@ -1,0 +1,2 @@
+ng new project-name --inline-styles --inline-template
+ng g c component-name or component-path+name

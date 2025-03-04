@@ -5,8 +5,8 @@ import { ProductDetailsComponent } from '../product-details/product-details.comp
 
 @Component({
   selector: 'app-product-list',
-  standalone: true, // If using standalone components
-  imports: [CommonModule, ProductDetailsComponent], // Only if using standalone components
+  standalone: true,
+  imports: [CommonModule, ProductDetailsComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })

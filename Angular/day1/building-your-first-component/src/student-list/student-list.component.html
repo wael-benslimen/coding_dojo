@@ -8,9 +8,13 @@
   </thead>
   <tbody>
     <tr *ngFor="let student of students">
-        <td> {{student.id}} </td>
-        <td> {{student.name}} </td>
-        <td> {{student.age}} </td>
+      <td>{{ student.id }}</td>
+      <td>{{ student.name }}</td>
+      <td>{{ student.age }}</td>
     </tr>
   </tbody>
 </table>
+
+<h3>{{ course }}</h3>
+
+<button (click)="sendBook()">send book</button>

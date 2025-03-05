@@ -1,0 +1,24 @@
+<form class=" my-5 flex gap-5 flex-col" (ngSubmit)="addbook()">
+  <div>
+    <label for="title" class=" text-xl font-semibold">title:</label>
+    <input type="text" name="title" class=" border rounded-lg m-1 p-0.5" [(ngModel)]="newbook.title">
+    <p *ngIf="errormsg.title" class=" text-red-500 font-semibold"> {{errormsg.title}} </p>
+  </div>
+  <div>
+    <label for="author" class=" text-xl font-semibold">author:</label>
+    <input type="text" name="author" class=" border rounded-lg m-1 p-0.5" [(ngModel)]="newbook.author">
+    <p *ngIf="errormsg.author" class=" text-red-500 font-semibold"> {{errormsg.author}} </p>
+  </div>
+  <div>
+    <label for="pages" class=" text-xl font-semibold">pages:</label>
+    <input type="number" name="pages" class=" border rounded-lg m-1 p-0.5" [(ngModel)]="newbook.pages">
+    <p *ngIf="errormsg.pages" class=" text-red-500 font-semibold"> {{errormsg.pages}} </p>
+  </div>
+  <div>
+    <label for="isAvailable" class=" text-xl font-semibold">isAvailable:</label>
+    <input type="checkbox" name="isAvailable" class=" border rounded-lg m-1 p-0.5" [(ngModel)]="newbook.isAvailable">
+    <p *ngIf="errormsg.isAvailable" class=" text-red-500 font-semibold"> {{errormsg.isAvailable}} </p>
+  </div>
+  <button class="border rounded-lg text-white bg-green-500 border-green-500 p-1 hover:bg-green-700 w-20" type="submit">add book</button>
+
+</form>

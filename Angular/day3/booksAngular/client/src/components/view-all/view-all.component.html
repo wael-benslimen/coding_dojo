@@ -1,0 +1,22 @@
+<div class="flex flex-col">
+  <h1 class=" text-3xl font-semibold">All Books</h1>
+  <table class=" border w-full">
+    <thead class=" border">
+        <tr>
+          <th class="p-2 border">title</th>
+          <th class="p-2 border">author</th>
+          <th class="p-2 border">pages</th>
+          <th class="p-2 border">isavailable</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of allBooks">
+        <td class="p-2 border"> {{book.title}} </td>
+        <td class="p-2 border"> {{book.author}} </td>
+        <td class="p-2 border"> {{book.pages}} </td>
+        <td class="p-2 border text-green-500 border-black" *ngIf="book.isAvailable"> is Available </td>
+        <td class="p-2 border text-red-500 border-black" *ngIf="!book.isAvailable"> not Available </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

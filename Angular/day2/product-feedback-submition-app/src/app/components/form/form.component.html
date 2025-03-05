@@ -1,0 +1,53 @@
+<form
+  action=""
+  class="container mx-auto p-5 my-5 flex gap-5 flex-col items-center"
+  (ngSubmit)="onSubmit()"
+>
+  <h1 class="text-2xl font-bold">feedback form</h1>
+  <div>
+    <label for="product_name">product_name: </label>
+    <input
+      type="text"
+      name="product_name"
+      class="border rounded-lg p-1"
+      [(ngModel)]="newFeedback.product_name"
+    />
+  </div>
+  <div>
+    <label for="rating">rating: </label>
+    <input
+      type="number"
+      name="rating"
+      class="border rounded-lg p-1"
+      [(ngModel)]="newFeedback.rating"
+    />
+  </div>
+  <div class="flex">
+    <label for="feedback">feedback: </label>
+    <textarea
+      name="feedback"
+      class="border rounded-lg p-1"
+      [(ngModel)]="newFeedback.feedback"
+    >
+    </textarea>
+  </div>
+  <div>
+    <label for="email">email: </label>
+    <input
+      type="email"
+      name="email"
+      class="border rounded-lg p-1"
+      [(ngModel)]="newFeedback.email"
+    />
+  </div>
+  <div>
+    <label for="recomend">would you recomand: </label>
+    <span>yes </span
+    ><input type="radio" value="yes" name="recomand" [(ngModel)]="newFeedback.recomend" />
+    <span> no </span
+    ><input type="radio" value="no" name="recomand" [(ngModel)]="newFeedback.recomend" />
+  </div>
+  <button class="border rounded-lg p-1 p-1 bg-green-500 text-white">
+    submit feedback
+  </button>
+</form>

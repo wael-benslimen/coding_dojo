@@ -1,21 +1,39 @@
 <div class="flex flex-col">
-  <h1 class=" text-3xl font-semibold">All Books</h1>
-  <table class=" border w-full">
-    <thead class=" border">
-        <tr>
-          <th class="p-2 border">title</th>
-          <th class="p-2 border">author</th>
-          <th class="p-2 border">pages</th>
-          <th class="p-2 border">isavailable</th>
-        </tr>
+  <h1 class="text-3xl font-semibold">All Books</h1>
+  <table class="border w-full">
+    <thead class="border">
+      <tr>
+        <th class="p-2 border">title</th>
+        <th class="p-2 border">author</th>
+        <th class="p-2 border">pages</th>
+        <th class="p-2 border">isavailable</th>
+        <th class="p-2 border">Action</th>
+      </tr>
     </thead>
     <tbody>
       <tr *ngFor="let book of allBooks">
-        <td class="p-2 border"> {{book.title}} </td>
-        <td class="p-2 border"> {{book.author}} </td>
-        <td class="p-2 border"> {{book.pages}} </td>
-        <td class="p-2 border text-green-500 border-black" *ngIf="book.isAvailable"> is Available </td>
-        <td class="p-2 border text-red-500 border-black" *ngIf="!book.isAvailable"> not Available </td>
+        <td class="p-2 border">{{ book.title }}</td>
+        <td class="p-2 border">{{ book.author }}</td>
+        <td class="p-2 border">{{ book.pages }}</td>
+        <td
+          class="p-2 border text-green-500 border-black"
+          *ngIf="book.isAvailable"
+        >
+          is Available
+        </td>
+        <td
+          class="p-2 border text-red-500 border-black"
+          *ngIf="!book.isAvailable"
+        >
+          not Available
+        </td>
+        <td class="p-2 border flex justify-around">
+          <a routerLink="/edit/{{book._id}}" class="border rounded-lg bg-blue-500 p-1 text-white px-5">
+            edit</a
+          ><a routerLink="/delete/{{book._id}}" class="border rounded-lg bg-red-500 text-white p-1 px-5">
+            delete
+          </a>
+        </td>
       </tr>
     </tbody>
   </table>

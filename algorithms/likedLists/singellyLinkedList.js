@@ -41,7 +41,7 @@ const singleNodeList = new SinglyLinkedList();
 
 // console.log(singleNodeList.insertAtback(1));
 // console.log(singleNodeList.insertAtback(5));
-
 singleNodeList.insertAtbackMany([5, 6, 7, 8, 9])
 console.log(singleNodeList);
+
 

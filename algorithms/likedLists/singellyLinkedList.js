@@ -6,21 +6,19 @@ class Node {
 }
 class SinglyLinkedList {
   constructor() {
-    this.head = new Node(2);
-    }
-    // check if the list is empty
+    this.head = null;
+  }
+  // check if the list is empty
   isEmpty() {
     if (this.head == null) {
       return true;
     }
-    }
-    // insert items at back
+  }
+  // insert items at back
   insertAtback(data) {
     let node = new Node(data);
     if (this.isEmpty()) {
-      console.log("in is empty ", this.isEmpty());
       this.head = node;
-      console.log(this.head);
       return this;
     } else {
       let runner = this.head;
@@ -31,7 +29,19 @@ class SinglyLinkedList {
       return this;
     }
   }
+
+  insertAtbackMany(data) {
+    data.forEach((element) => {
+      this.insertAtback(element);
+    });
+    return this;
+  }
 }
-const singleNodeList = new SinglyLinkedList().insertAtback(1);
+const singleNodeList = new SinglyLinkedList();
+
+// console.log(singleNodeList.insertAtback(1));
+// console.log(singleNodeList.insertAtback(5));
+
+singleNodeList.insertAtbackMany([5, 6, 7, 8, 9])
 console.log(singleNodeList);
-console.log(singleNodeList.insertAtback(5));
+

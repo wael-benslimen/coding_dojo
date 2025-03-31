@@ -4,5 +4,6 @@
   "python.testing.pytestEnabled": true,
   "terminal.integrated.automationProfile.windows": {
     
-  }
+  },
+  "java.debug.settings.onBuildFailureProceed": true
 }

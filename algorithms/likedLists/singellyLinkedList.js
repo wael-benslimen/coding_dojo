@@ -10,7 +10,7 @@ class SinglyLinkedList {
   }
   // check if the list is empty
   isEmpty() {
-    if (this.head == null) {
+    if (this.head === null) {
       return true;
     }
   }
@@ -29,19 +29,46 @@ class SinglyLinkedList {
       return this;
     }
   }
-
+  // insert at back recurcive
+  insertAtBackRecurcive(data, runner = this.head) {
+    let node = new Node(data);
+    console.log(runner);
+    if (this.isEmpty()) {
+      this.head = node;
+      return this;
+    }
+    if (runner.next == null) {
+      runner.next = node;
+      return this;
+    }
+    runner = runner.next;
+    return this.insertAtBackRecurcive(data, runner);
+  }
+  // insert many items at back
   insertAtbackMany(data) {
     data.forEach((element) => {
       this.insertAtback(element);
     });
     return this;
   }
+  // get all nodes in an array
+  toArray() {
+    const arr = [];
+    if (this.isEmpty()) {
+      return "list is empty";
+    }
+    let runner = this.head;
+    while (runner) {
+      arr.push(runner.data);
+      runner = runner.next;
+    }
+    return arr;
+  }
 }
 const singleNodeList = new SinglyLinkedList();
+// console.log(singleNodeList.insertAtBackRecurcive(1));
+// console.log(singleNodeList.insertAtBackRecurcive(5));
 
-// console.log(singleNodeList.insertAtback(1));
-// console.log(singleNodeList.insertAtback(5));
-singleNodeList.insertAtbackMany([5, 6, 7, 8, 9])
-console.log(singleNodeList);
-
-
+singleNodeList.insertAtbackMany([5, 6, 7, 8, 9]);
+console.log(singleNodeList.toArray());
+// console.log(singleNodeList);

@@ -64,11 +64,28 @@ class SinglyLinkedList {
     }
     return arr;
   }
+
+  length() {
+    if (this.isEmpty()) {
+      return "list is empty";
+    }
+    return this.toArray().length;
+  }
+
+  insertAtFront(data) {
+    let node = new Node(data);
+    node.next = this.head;
+    this.head = node;
+    return this
+  }
 }
 const singleNodeList = new SinglyLinkedList();
 // console.log(singleNodeList.insertAtBackRecurcive(1));
 // console.log(singleNodeList.insertAtBackRecurcive(5));
 
-singleNodeList.insertAtbackMany([5, 6, 7, 8, 9]);
+singleNodeList.insertAtbackMany([6, 7, 8, 9]);
+singleNodeList.insertAtFront(5)
 console.log(singleNodeList.toArray());
+console.log(singleNodeList.length());
+
 // console.log(singleNodeList);

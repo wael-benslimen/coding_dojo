@@ -28,7 +28,7 @@ public class controllers {
 	
 	@RequestMapping("/daikichi/lotto/{age}")
 	public String lotto(@PathVariable("age") int age) {
-		String expresion = age < 30 ?  "you will take a good jorny..." :  "go have fun with your family ...";
+		String expresion = age % 2 == 0 ?  "you will take a good jorny..." :  "go have fun with your family ...";
 		return expresion;
 	}
 	

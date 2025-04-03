@@ -14,5 +14,6 @@
     "java/week1/day5/BaristaChalenge",
     "java/week1/day5/BankAccount",
     "java/week2/day1/daikishiroutescore/src/main/java/com/daikishi"
-  ]
+  ],
+  "java.compile.nullAnalysis.mode": "automatic"
 }

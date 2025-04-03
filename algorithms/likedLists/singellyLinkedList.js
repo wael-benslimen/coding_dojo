@@ -64,19 +64,33 @@ class SinglyLinkedList {
     }
     return arr;
   }
-
+  // get the liked list length
   length() {
     if (this.isEmpty()) {
-      return "list is empty";
+      return 0;
     }
     return this.toArray().length;
   }
-
+  // insert at front
   insertAtFront(data) {
     let node = new Node(data);
     node.next = this.head;
     this.head = node;
-    return this
+    return this;
+  }
+  // remove from front
+  removeFront() {
+    this.head = this.head.next;
+    return this;
+  }
+  // remove back
+  removeBack() {
+    let runner = this.head;
+    while (runner.next.next) {
+      runner = runner.next;
+    }
+    runner.next = null;
+    return this;
   }
 }
 const singleNodeList = new SinglyLinkedList();
@@ -84,8 +98,11 @@ const singleNodeList = new SinglyLinkedList();
 // console.log(singleNodeList.insertAtBackRecurcive(5));
 
 singleNodeList.insertAtbackMany([6, 7, 8, 9]);
-singleNodeList.insertAtFront(5)
+singleNodeList.insertAtFront(5);
 console.log(singleNodeList.toArray());
 console.log(singleNodeList.length());
+singleNodeList.removeFront();
+singleNodeList.removeBack();
+console.log(singleNodeList.toArray());
 
 // console.log(singleNodeList);

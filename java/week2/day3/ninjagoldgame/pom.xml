@@ -8,10 +8,10 @@
 		<version>3.4.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.omikikujiform.demo</groupId>
-	<artifactId>omikikujiform</artifactId>
+	<groupId>com.ninjagoldgame.demo</groupId>
+	<artifactId>ninjagoldgame</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>omikikujiform</name>
+	<name>ninjagoldgame</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

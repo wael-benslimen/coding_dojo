@@ -219,24 +219,47 @@ class SinglyLinkedList {
 
     return false;
   }
-
+  /**
+   * delete the chosen value
+   * @param {*} val - The value to delete
+   * @returns {SinglyLinkedList} The list instance for method chaining
+   */
+  /**
+   * Deletes the first occurrence of the specified value in the list
+   * @param {*} val - The value to delete
+   * @returns {SinglyLinkedList} The list instance for method chaining
+   */
   removeValue(val) {
-    let runner = this.head;
-    if (runner.data == val) {
-      this.removeFront();
+    // If list is empty, nothing to remove
+    if (!this.head) {
+      return this;
     }
-    while (runner) {
-      if (runner.next.data == val) {
+
+    // Special case: value is in the head node
+    if (this.head.data === val) {
+      this.removeFront();
+      return this;
+    }
+
+    let runner = this.head;
+
+    // Traverse the list to find the node before the one to remove
+    while (runner.next) {
+      if (runner.next.data === val) {
+        // Found the value - remove the node
         if (runner.next.next) {
+          // Node to remove is in the middle
           runner.next = runner.next.next;
-          return this;
         } else {
+          // Node to remove is the tail
           this.removeBack();
-          return this;
         }
+        return this;
       }
       runner = runner.next;
     }
+
+    // Value not found in the list
     return this;
   }
 
@@ -287,6 +310,7 @@ console.log(`Contains 6? ${singleNodeList.contains(6)}`); // true
 console.log(`Contains 70? ${singleNodeList.contains(70)}`); // false
 
 // Test Remove value
+console.log("removing the specified value");
 singleNodeList.removeValue(6);
 console.log("after remove value: ");
 console.log(singleNodeList.toArray());

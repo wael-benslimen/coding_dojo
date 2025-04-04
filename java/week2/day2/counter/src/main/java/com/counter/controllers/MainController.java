@@ -2,6 +2,7 @@ package com.counter.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -28,6 +29,13 @@ public class MainController {
 	@GetMapping("/your_server/counter")
 	public String counterMethod() {
 		return "counter.jsp";
+	}
+	
+	@PostMapping("/reset")
+	public String reset(HttpSession session) {
+		counter = 0;
+		session.invalidate();
+		return "redirect:/";
 	}
 	
 }

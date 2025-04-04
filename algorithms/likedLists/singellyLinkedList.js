@@ -222,11 +222,21 @@ class SinglyLinkedList {
 
   removeValue(val) {
     let runner = this.head;
-    while (runner) {
-      runner.data == val? break : runner = runner.next
-        
+    if (runner.data == val) {
+      this.removeFront();
     }
-
+    while (runner) {
+      if (runner.next.data == val) {
+        if (runner.next.next) {
+          runner.next = runner.next.next;
+          return this;
+        } else {
+          this.removeBack();
+          return this;
+        }
+      }
+      runner = runner.next;
+    }
     return this;
   }
 

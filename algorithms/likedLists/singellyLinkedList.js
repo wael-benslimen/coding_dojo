@@ -264,6 +264,42 @@ class SinglyLinkedList {
   }
 
   /**
+   * add the specified value before the first occurrence of the specified taget value in the list
+   * @param {*} val - The value to add before
+   * @param {*} targetval - The value to add
+   * @returns {SinglyLinkedList} The list instance for method chaining
+   */
+  prepand(val, targetval) {
+    // if list is empty we throw an error
+    if (!this.head) {
+      throw new Error("target value not found");
+    }
+
+    let runner = this.head;
+
+    // Traverse the list to find the node before the one we ant to add the specified value before
+    while (runner) {
+      // found the target value - add the value specified before
+      if (runner.next.data == targetval) {
+        // add the runner.next to a temporary var to not loose it in the prosscess
+        let temp = runner.next;
+        // add the specified value before the target value
+        runner.next = new Node(val);
+        // change the taget value to the next of the added node to make it in its place
+        runner.next.next = temp;
+        // return this for chaning
+        return this;
+      }
+      runner = runner.next;
+    }
+
+    // throw an error if the target value is not found
+    if (!runner) {
+      throw new Error("value not found");
+    }
+  }
+
+  /**
    * Empties the list by removing all nodes
    * @returns {SinglyLinkedList} The list instance for method chaining
    */
@@ -315,6 +351,12 @@ singleNodeList.removeValue(6);
 console.log("after remove value: ");
 console.log(singleNodeList.toArray());
 
+// test prepend value
+console.log("prepandig the specified value");
+singleNodeList.prepand(20, 7);
+console.log("after adding value: ");
+console.log(singleNodeList.toArray());
+
 // Test clear
 console.log("Clearing list:");
 singleNodeList.clear();
@@ -334,4 +376,11 @@ try {
   singleNodeList.insertAtBackMany("not an array"); // Should throw error
 } catch (e) {
   console.log(`Error caught: ${e.message}`); // "Input must be an array"
+}
+
+try {
+  console.log("attempting invalid prepend");
+  singleNodeList.prepand(1555, 155555);
+} catch (e) {
+  console.log(`error caught: ${e.message}`); // "target value not found"
 }

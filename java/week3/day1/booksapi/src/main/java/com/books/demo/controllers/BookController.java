@@ -1,5 +1,6 @@
 package com.books.demo.controllers;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,7 +14,12 @@ public class BookController {
  public BookController(BookService bookService){
      this.bookService = bookService;
  }
- // other methods removed for brevity
+ @PostMapping("/create")
+ public Book create() {
+	 return bookService.createBook(new Book("title", "desczzzz", "langzz", 180));
+ }
+ 
+ 
  @RequestMapping(value="/api/books/{id}", method=RequestMethod.PUT)
  public Book update(
  		@PathVariable("id") Long id, 

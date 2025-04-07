@@ -20,5 +20,11 @@ public class BookViewController {
 		return "show";
 	}
 	
+	@GetMapping("/books")
+	public String showAll(Model model) {
+		model.addAttribute("allBooks", bookserv.allBooks());
+		return "showAll";
+	}
+	
 	
 }

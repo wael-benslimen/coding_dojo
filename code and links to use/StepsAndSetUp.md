@@ -21,7 +21,7 @@
 spring.mvc.view.prefix=/WEB-INF/
 spring.mvc.view.suffix=.jsp
 logging.level.org.springframework.web.servlet.view=DEBUG
-spring.datasource.url=jdbc:mysql://localhost:3306/booksApi?createDatabaseIfNotExist=true
+spring.datasource.url=jdbc:mysql://localhost:3306/<schemaname>?createDatabaseIfNotExist=true
 spring.datasource.username=root
 spring.datasource.password=root
 spring.jpa.hibernate.ddl-auto=update
@@ -33,7 +33,7 @@ spring.mvc.hiddenmethod.filter.enabled=true
    - Copy the following dependencies into your `pom.xml` file:
 
      ```
-         <dependencies>
+     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -108,8 +108,44 @@ spring.mvc.hiddenmethod.filter.enabled=true
 - Add `@Repository` annotation to your repository interfaces.
 
 10. **Create a New Package for Services**
+
     - Right-click on the main package, select `New` -> `Package`, and name it in this format: `com.mainpackage.services`.
     - Add `@Service` annotation to your service class.
 
 11. **JSP file add ons**
     -<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+    -<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+    -<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+    -jsp form:
+    <div class="form-group">
+    <form:label path="name"></form:label>
+    <form:input path="name" type="text" placeholder="enter burger name" class="form-control"/>
+    <form:errors class="badge text-danger" path="name"/>
+    </div>
+
+12. **model setup**
+    -id:
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    -created at / updated at
+    @Column(updatable=false)
+    private Date createdAt;
+
+    private Date updatedAt;
+
+    // methods
+    @PrePersist
+    protected void onCreate() {
+    this.createdAt=new Date();
+    this.updatedAt=new Date();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+    this.updatedAt=new Date();
+    }
+
+13. **Repository setup**
+    -public interface repoName extends CrudRepository<model,Long>

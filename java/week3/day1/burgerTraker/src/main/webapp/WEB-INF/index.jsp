@@ -26,6 +26,7 @@
                     <th scope="col">Rname</th>
                     <th scope="col">rating</th>
                     <th scope="col">notes</th>
+                    <th scope="col">actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,6 +37,9 @@
                     <td><c:out value="${b.restaurant_name}"></c:out></td>
                     <td><c:out value="${b.rateing}"></c:out></td>
                     <td><c:out value="${b.notes}"></c:out></td>
+                    <td>
+                    	<a href="/burger/edit/${b.id }" class=" btn btn-primary"> edit </a>
+                    </td>
                 </tr>
             	</c:forEach>
                 

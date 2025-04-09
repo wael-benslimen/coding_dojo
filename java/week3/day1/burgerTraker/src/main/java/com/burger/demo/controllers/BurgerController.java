@@ -47,6 +47,8 @@ public class BurgerController {
 	@PostMapping("/burger/edit/{id}")	
 	public String treatEdit(@Valid @ModelAttribute Burger burger, BindingResult result, @PathVariable long id) {
 		if(result.hasErrors()) {
+			Burger burgertoedit = bService.getOne(id);
+			model.addAttribute("burger",burgertoedit);
 			return "edit";
 		}
 		bService.edit(burger, id);

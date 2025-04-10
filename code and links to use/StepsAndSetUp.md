@@ -131,7 +131,7 @@
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    -created at / updated at
+
     @Column(updatable=false)
     private Date createdAt;
 

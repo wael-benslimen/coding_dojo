@@ -42,7 +42,7 @@ public class User {
 		    @Size(min = 8)
 		    private String confpw;
 		    
-		    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "user" )
+		    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user" )
 		    List<Book> myBooks;
 		    
 		    @Column(updatable=false)

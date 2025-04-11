@@ -81,10 +81,17 @@ public class BookController {
 	@PostMapping("/books/edit/{bookId}")
 	public String handleEdit(@PathVariable long bookId,@Valid @ModelAttribute Book book, BindingResult result, HttpSession session,  Model model) {
 		if(result.hasErrors()) {
-			model.addAttribute("book",bookServ.getById(bookId));
+			book.setId(bookId);
 			return "edit";
 		}
 		bookServ.edit(book, bookId, userServ.getById((long)session.getAttribute("userId")));
+		return "redirect:/home";
+	}
+	
+	@GetMapping("/books/delete/{bookId}")
+	public String delete(@PathVariable long bookId) {
+		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++"+bookId);
+		bookServ.delete(bookId);
 		return "redirect:/home";
 	}
 }

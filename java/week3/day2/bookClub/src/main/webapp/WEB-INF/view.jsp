@@ -29,7 +29,7 @@
             <c:if test="${userId == book.user.getId() }">
             <div class="d-flex justify-content-end align-items-center gap-3">
                 <a href="/books/edit/${book.id }" class="btn btn-primary">edit</a>
-                <a href="/books/delete" class="btn btn-danger">delete</a>
+                <a href="/books/delete/${book.id}" class="btn btn-danger">delete</a>
             </div>
             </c:if>
             <c:if test="${userId != book.user.getId() }">

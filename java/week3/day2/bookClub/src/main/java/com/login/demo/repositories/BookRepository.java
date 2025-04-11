@@ -14,5 +14,7 @@ public interface BookRepository extends CrudRepository<Book,Long> {
 	
 	public Book getById(Long id);
 	
+	public void deleteById(Long id);
+	
 	
 }

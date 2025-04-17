@@ -17,6 +17,6 @@ public class controllers {
 	
 	@RequestMapping("/daikichi/tomorrow")
 	public String tomorrow() {
-		return "tomorrow an oportunitywill arise so be sure tobe open to new ideas"
+		return "tomorrow an oportunitywill arise so be sure tobe open to new ideas";
 	}
 }

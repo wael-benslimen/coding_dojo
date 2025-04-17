@@ -7,13 +7,14 @@
   },
   "java.debug.settings.onBuildFailureProceed": true,
   "java.project.sourcePaths": [
+    "java/week2/day1/daikishiroutescore/src/main/java/com/daikishi",
     "java/week1/day5/devices",
     "java/week1/day5/coffedore",
     "java/week1/day5/caresoft/src",
     "java/week1/day5/Zoo",
     "java/week1/day5/BaristaChalenge",
     "java/week1/day5/BankAccount",
-    "java/week2/day1/daikishiroutescore/src/main/java/com/daikishi"
+    "java/week1/day1/orders&items"
   ],
   "java.compile.nullAnalysis.mode": "automatic"
 }

@@ -1,0 +1,37 @@
+package com.example.booktopiaapi.services;
+
+import com.example.booktopiaapi.models.User;
+import com.example.booktopiaapi.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class UserService {
+    @Autowired
+    UserRepository userRepository;
+
+    public User getUserById(Long id) {
+        return userRepository.findById(id).isEmpty()? userRepository.findById(id).get(): null;
+    }
+    public User getUserByEmail(String email) {
+        return userRepository.findByEmail(email).isEmpty()? userRepository.findByEmail(email).get(): null;
+    }
+    public User saveUser(User user) {
+        return userRepository.save(user);
+    }
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
+    }
+    public User updateUser(User user, Long id, List<String>favorites, List<String> wishList, List<String> audioBooks, List<String> booksRead, List<String> booksReading) {
+        user.setId(id);
+        user.setFavorites(favorites);
+        user.setWishList(wishList);
+        user.setAudioBooks(audioBooks);
+        user.setBooksRead(booksRead);
+        user.setBooksReading(booksReading);
+        user.setProfileImage(user.getProfileImage());
+        return userRepository.save(user);
+    }
+}
